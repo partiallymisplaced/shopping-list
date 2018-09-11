@@ -42,4 +42,19 @@ export class ShoppingListComponent {
     }
   }
 
+  onStrike(item) {
+    for(var i = 0; i < this.tasks.length; i++){
+      if(item.id == this.tasks[i].id){
+        if(this.tasks[i].strike){
+          this.tasks[i].strike = false;
+        }
+        else {
+          this.tasks[i].strike = true;
+        }
+        break;
+      }
+
+    }
+  }
+
 }
