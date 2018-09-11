@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: "app-shopping-list",
@@ -8,12 +8,29 @@ import { Component, OnInit } from '@angular/core';
     "../../assets/bootstrap-3.3.7-dist/css/bootstrap.min.css"
   ]
 })
+
 export class ShoppingListComponent {
-  task: string;
+  task = {
+    name: '',
+    id: 0
+  };  
   tasks = [];
 
   onClick() {
-    this.tasks.push({ name: this.task });
-    this.task = "";
+    if(this.task.id == 0){
+      this.tasks.push({
+        id: (new Date()).getTime(), 
+        name: this.task.name});
+    }
+    this.task = {
+      name: '',
+      id: 0
+    };  
+    
   }
+
+  onEdit(item){
+    this.task = item;
+  }
+
 }
