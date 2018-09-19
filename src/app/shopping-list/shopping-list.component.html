@@ -1,10 +1,31 @@
 <h1>My shopping list</h1>
 
 <input type="text" placeholder="Need to buy">
-<button>Add to list</button>
+<button><fa-icon [icon]="faPlusCircle"></fa-icon></button>
+
 
 <ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
+  <li>Item 1
+    <button>
+      <fa-icon [icon]="faPen"></fa-icon>
+    </button>
+    <button>
+      <fa-icon [icon]="faTimesCircle"></fa-icon>
+    </button></li>
+  <li>Item 1
+    <button>
+      <fa-icon [icon]="faPen"></fa-icon>
+    </button>
+    <button>
+      <fa-icon [icon]="faTimesCircle"></fa-icon>
+    </button>
+  </li>
+  <li>Item 1
+    <button>
+      <fa-icon [icon]="faPen"></fa-icon>
+    </button>
+    <button>
+      <fa-icon [icon]="faTimesCircle"></fa-icon>
+    </button>
+  </li>
 </ul>
