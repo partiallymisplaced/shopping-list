@@ -1,31 +1,21 @@
 <main>
   <h1>My shopping list</h1>
 
-  <input type="text" placeholder="Need to buy">
-  <button class="add"><fa-icon [icon]="faPlusCircle" size="lg"></fa-icon></button>
+  <input 
+    type="text" 
+    placeholder="Need to buy"
+    id="addItem" 
+    [(ngModel)]="itemToBuy"
+        (keydown.enter)="addNewItem()"
+
+  />
+  <button class="add" (click)="addNewItem()"><fa-icon [icon]="faPlusCircle" size="lg"></fa-icon></button>
+
   <ul>
-    <li>Item 1
-      <button>
-        <fa-icon [icon]="faPen" size="lg"></fa-icon>
-      </button>
-      <button>
-        <fa-icon [icon]="faTimesCircle" size="lg"></fa-icon>
-      </button></li>
-    <li>Item 1
-      <button>
-        <fa-icon [icon]="faPen" size="lg"></fa-icon>
-      </button>
-      <button>
-        <fa-icon [icon]="faTimesCircle" size="lg"></fa-icon>
-      </button>
-    </li>
-    <li>Item 1
-      <button>
-        <fa-icon [icon]="faPen" size="lg"></fa-icon>
-      </button>
-      <button>
-        <fa-icon [icon]="faTimesCircle" size="lg"></fa-icon>
-      </button>
+    <li *ngFor="let itemToBuy of itemsToBuy"> {{itemToBuy.name}} 
+      <button><fa-icon [icon]="faPen" size="lg"></fa-icon></button>
+      <button><fa-icon [icon]="faTimesCircle" size="lg"></fa-icon></button>
     </li>
   </ul>
+    
 </main>
