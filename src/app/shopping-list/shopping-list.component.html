@@ -1,21 +1,24 @@
 <main>
   <h1>My shopping list</h1>
 
-  <input 
+  <input
     type="text" 
-    placeholder="Need to buy"
+    placeholder="I need to buy ..."
     id="addItem" 
-    [(ngModel)]="itemToBuy"
-        (keydown.enter)="addNewItem()"
+    [(ngModel)]="itemToBuy.name"
+    (keydown.enter)="addNewItem()"
 
   />
-  <button class="add" (click)="addNewItem()"><fa-icon [icon]="faPlusCircle" size="lg"></fa-icon></button>
+  <button class="add" (click)="addNewItem()">
+    <fa-icon [icon]="faPlusCircle" size="lg">
+    </fa-icon>
+  </button>
 
   <ul>
     <li *ngFor="let itemToBuy of itemsToBuy"> {{itemToBuy.name}} 
-      <button><fa-icon [icon]="faPen" size="lg"></fa-icon></button>
-      <button><fa-icon [icon]="faTimesCircle" size="lg"></fa-icon></button>
+      <button (click)="updateItem(itemToBuy)"><fa-icon [icon]="faPen" size="lg"></fa-icon></button>
+      <button (click)="deleteItem(itemToBuy)"><fa-icon [icon]="faTimesCircle" size="lg"></fa-icon></button>
     </li>
   </ul>
-    
+
 </main>

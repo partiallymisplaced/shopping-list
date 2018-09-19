@@ -8,20 +8,43 @@ import { faPlusCircle, faPen, faTimesCircle } from '@fortawesome/free-solid-svg-
 
 })
 
-export class ShoppingListComponent implements OnInit {
+export class ShoppingListComponent {
   faPlusCircle = faPlusCircle;
   faPen = faPen;
   faTimesCircle = faTimesCircle;
   
-  itemToBuy: string;
+  itemToBuy = {
+    name: '',
+    id: 0
+  };
   itemsToBuy = [];
-
+  
   addNewItem(){
-    this.itemsToBuy.unshift({name: this.itemToBuy});
-    this.itemToBuy = '';
+    if (this.itemToBuy.id == 0){
+      this.itemsToBuy.unshift({
+        id: (new Date()).getTime(),  
+        name: this.itemToBuy.name
+      });
+    }
+
+    this.itemToBuy = {
+      name: '',
+      id: 0
+    };
+
   }
 
-  constructor() {}
+  updateItem(itemToUpdate){
+    this.itemToBuy = itemToUpdate;
+  }
 
-  ngOnInit() {}
+  deleteItem(itemToDelete){
+    for(let i = 0; i < this.itemsToBuy.length; i++){
+      if(itemToDelete.id == this.itemsToBuy[i].id){
+        this.itemsToBuy.splice(i, 1);
+        break;
+      }
+    }
+  }
+
 }
