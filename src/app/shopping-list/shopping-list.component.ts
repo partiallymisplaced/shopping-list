@@ -4,47 +4,55 @@ import { faPlusCircle, faPen, faTimesCircle } from '@fortawesome/free-solid-svg-
 @Component({
   selector: "app-shopping-list",
   templateUrl: "./shopping-list.component.html",
-  styleUrls: ["./shopping-list.component.css"],
-
+  styleUrls: ["./shopping-list.component.css"]
 })
-
 export class ShoppingListComponent {
   faPlusCircle = faPlusCircle;
   faPen = faPen;
   faTimesCircle = faTimesCircle;
-  
+
   itemToBuy = {
-    name: '',
+    name: "",
     id: 0
   };
   itemsToBuy = [];
   
-  addNewItem(){
-    if (this.itemToBuy.id == 0){
+  addNewItem() {
+    if (this.itemToBuy.id == 0) {
       this.itemsToBuy.unshift({
-        id: (new Date()).getTime(),  
+        id: (new Date()).getTime(),
         name: this.itemToBuy.name
       });
     }
-
+    
     this.itemToBuy = {
-      name: '',
+      name: "",
       id: 0
     };
-
   }
-
-  updateItem(itemToUpdate){
+  
+  updateItem(itemToUpdate) {
     this.itemToBuy = itemToUpdate;
   }
-
-  deleteItem(itemToDelete){
-    for(let i = 0; i < this.itemsToBuy.length; i++){
-      if(itemToDelete.id == this.itemsToBuy[i].id){
+  
+  deleteItem(itemToDelete) {
+    for (let i = 0; i < this.itemsToBuy.length; i++) {
+      if (itemToDelete.id == this.itemsToBuy[i].id) {
         this.itemsToBuy.splice(i, 1);
-        break;
       }
     }
   }
-
+  
+  markItemBought(item) {
+    for (var i = 0; i < this.itemsToBuy.length; i++) {
+      if (item.id == this.itemsToBuy[i].id) {
+        if (this.itemsToBuy[i].bought) {
+          this.itemsToBuy[i].bought = false;
+        }
+        else {
+          this.itemsToBuy[i].bought = true;
+        }
+      }
+    }
+  }
 }

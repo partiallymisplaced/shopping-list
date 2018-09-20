@@ -15,9 +15,19 @@
   </button>
 
   <ul>
-    <li *ngFor="let itemToBuy of itemsToBuy"> {{itemToBuy.name}} 
-      <button (click)="updateItem(itemToBuy)"><fa-icon [icon]="faPen" size="lg"></fa-icon></button>
-      <button (click)="deleteItem(itemToBuy)"><fa-icon [icon]="faTimesCircle" size="lg"></fa-icon></button>
+    <li *ngFor="let itemToBuy of itemsToBuy">       
+      <span 
+        (click)="markItemBought(itemToBuy)" 
+        [ngClass]="{'bought': itemToBuy.bought}">
+        {{ itemToBuy.name }}
+      </span>
+
+      <button (click)="updateItem(itemToBuy)">
+        <fa-icon [icon]="faPen" size="lg"></fa-icon>
+      </button>
+      <button (click)="deleteItem(itemToBuy)">
+        <fa-icon [icon]="faTimesCircle" size="lg"></fa-icon>
+      </button>
     </li>
   </ul>
 
