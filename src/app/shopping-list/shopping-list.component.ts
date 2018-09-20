@@ -40,18 +40,20 @@ export class ShoppingListComponent {
       if (itemToDelete.id == this.itemsToBuy[i].id) {
         this.itemsToBuy.splice(i, 1);
       }
+      break;
     }
   }
   
-  markItemBought(item) {
+  markItemBought(itemToMark) {
     for (var i = 0; i < this.itemsToBuy.length; i++) {
-      if (item.id == this.itemsToBuy[i].id) {
+      if (itemToMark.id == this.itemsToBuy[i].id) {
         if (this.itemsToBuy[i].bought) {
           this.itemsToBuy[i].bought = false;
         }
         else {
           this.itemsToBuy[i].bought = true;
         }
+        break;
       }
     }
   }
