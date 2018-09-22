@@ -67,9 +67,6 @@ button.add {
     color: #ff5200;
 }
 
-li>button {
-    /* float: right; */
-}
 
 .bought {
     color: #aaa;
