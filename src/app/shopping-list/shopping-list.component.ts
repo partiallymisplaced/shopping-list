@@ -40,7 +40,6 @@ export class ShoppingListComponent {
       if (itemToDelete.id == this.itemsToBuy[i].id) {
         this.itemsToBuy.splice(i, 1);
       }
-      break;
     }
   }
   

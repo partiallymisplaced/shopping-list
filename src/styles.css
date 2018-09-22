@@ -3,7 +3,8 @@
 } */
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: #544d44;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;

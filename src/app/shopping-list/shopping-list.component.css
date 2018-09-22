@@ -1,10 +1,19 @@
 main {
-    width: 400px;
+    background-color:#fff;
+    min-height: 50vw;
+    width: 50%;
+    position: absolute;
+    top: 10%;
+    left: calc(25% - 60px);
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.1);
+    padding: 40px 60px;
 }
 
 h1 {
-    font-weight: 400;
-    line-height: 3em;
+    padding-bottom: 36px;
+    color: #e44900;
 }
 
 ul {
@@ -12,42 +21,54 @@ ul {
 }
 
 li {
+    height: 1.2em;
     text-decoration: none;
     list-style: none;
-    padding: 8px 12px;
+    padding: 16px 12px;
     border-bottom: 1px solid #ddd;
-    width: 100%;
+    width: calc(100% - 24px);
     cursor: pointer;
 
 }
 
 input[type="text"] {
     border: none;
-    border-bottom: 1px solid #000;
-    padding: 8px 12px;
+    border-bottom: 1px solid #544d44;
+    padding: 16px 12px;
     font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    width: 100%;
-    margin-right: -60px;
+    font-family: 'Montserrat', sans-serif;
+    width: calc(100% - 24px);
+    margin-right: -40px;
 }
 input[type="text"]::placeholder {
     color: #aaa;
+}
+
+.button-group {
+    float: right;
 }
 
 button {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    color: #aaa;
+}
 
+.clear:hover {
+    color: #e44900;
+}
+.edit:hover {
+    color: #ffb100;
 }
 
 button.add {
     position: relative;
-    left: 26px;
+    color: #ff5200;
 }
 
 li>button {
-    float: right;
+    /* float: right; */
 }
 
 .bought {
